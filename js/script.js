@@ -6,7 +6,19 @@ var btn = document.getElementById('btn');
 var result = document.getElementById('result');
 
 function getPassword() {
-  result.value = 'aaaaaaa';
+  var seed = 'abcdefghijklmnopqrstuvwxyz';
+  var len = slider.value;
+  var pwd = '';
+
+  // for (var i = 0; i < len; i++) {
+  //   pwd += seed[Math.floor(Math.random() * seed.length)];
+  // }
+
+  while (len--) {
+    pwd += seed[Math.floor(Math.random() * seed.length)];
+  }
+
+  result.value = pwd;
 }
 
 slider.addEventListener('change', function() {
